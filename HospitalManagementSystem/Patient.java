@@ -16,6 +16,23 @@ public class Patient {
 
     }
 
+    // methods //
+
+    public void addPatient(){
+        System.out.print("Enter Patient Name : ");
+
+        String name = scanner.next();
+
+        System.out.print("Enter Patient Age : ");
+
+        int age = scanner.nextInt();
+
+        System.out.printl("Enter Patient Gender : ");
+
+        String gender = scanner.next();
+
+    }
+
 
 
 
