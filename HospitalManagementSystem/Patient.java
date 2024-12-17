@@ -66,6 +66,30 @@ public class Patient {
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(query);
 
+            // what it does is : it holds the upcomming table from the db //
+            // sets the pointer to it , named as next //
+            // and then it keeps printing //
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            // for printing using format specifier so it does not use every variable //
+
+            System.out.println("+------------+--------------------+----------+-----------+");
+            System.out.println("| Patient Id | Name               | Age      | Gender    | ");
+            System.out.println("+------------+--------------------+----------+-----------+");
+
+            while(resultSet.next()){
+                int id = resultSet.getInt("id");
+                String name = resultSet.getString("name");
+                int age = resultSet.getInt("age");
+                String gender = resultSet.getString("gender");
+
+
+                // for formatting the output //
+                System.out.printf("|%-12s|%-20s|%-10s|%-12s|");
+                System.out.println("+------------+--------------------+----------+-----------+");
+
+            }
 
 
         } catch (SQLException e){
